@@ -1,0 +1,47 @@
+name: Bug report
+description: Report something that isn't working as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug! For **security vulnerabilities**,
+        please do not use this form — see [SECURITY.md](https://github.com/birthday-tools/edgarmcp/blob/main/SECURITY.md).
+  - type: input
+    id: version
+    attributes:
+      label: EdgarMCP version
+      description: Output of `pip show mcp-edgar`
+      placeholder: "0.1.2"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, and what went wrong?
+      placeholder: Describe the tool you called, the arguments, and the error or wrong output.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps, ideally the exact tool call and arguments.
+      render: text
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, MCP client
+      placeholder: "macOS 14, Python 3.11, Claude Desktop"
+    validations:
+      required: false
